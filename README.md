@@ -2,6 +2,7 @@
 A little context: 
 * These maps and graphs were generated from [Google Earth Engine](https://developers.google.com/earth-engine/guides/getstarted) satellite data.
 * Using those fancy data readings from satellites, EVI can be calculated using different parts of the color spectrum and [some math](https://www.usgs.gov/core-science-systems/nli/landsat/landsat-enhanced-vegetation-index?qt-science_support_page_related_con=0#qt-science_support_page_related_con)
+* If you want more details on how satellite imagery and GEE works at a fundamental level, check out [this post](https://gis.stackexchange.com/questions/304180/what-are-the-min-and-max-values-of-map-addlayer-on-google-earth-engine)
 * These maps and graphs were made in hopes of finding out where the most degraded lands are in Senegal (aka, where usable soil has deteriorated in quality over the past years). 
 * The focus region was the Peanut Basin in Senegal:
 ![map showing where senegal's peanut basin region is](https://www.researchgate.net/profile/Ewan-Robinson/publication/267370492/figure/fig1/AS:514884001595392@1499769320661/The-location-of-study-area-in-Senegal-The-dark-border-indicates-the-extent-of-the-former.png)
