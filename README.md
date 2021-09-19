@@ -6,7 +6,9 @@ A little context:
 * These maps and graphs were made in hopes of finding out where the most degraded lands are in Senegal (aka, where usable soil has deteriorated in quality over the past years). 
 * The focus region was the Peanut Basin in Senegal:
 ![map showing where senegal's peanut basin region is](https://www.researchgate.net/profile/Ewan-Robinson/publication/267370492/figure/fig1/AS:514884001595392@1499769320661/The-location-of-study-area-in-Senegal-The-dark-border-indicates-the-extent-of-the-former.png)
+
 ---
+
 ## Annual Max EVI
 ![Map of Senegal's annual max EVI](mapsANDgraphs/eviMaximumMaps.png)  
 The above map takes the highest EVI per year (from -1 to 1) and averages it out throughout all available years. [**Here's the GEE script**](https://code.earthengine.google.com/7195eb5c856b6f3567ed75ccd704bd98), if you'd like.  
@@ -30,3 +32,15 @@ The differences in EVI in the sample are greatest in the last few months of the 
 Using [**Google Earth Engine's linear fitting function**](https://code.earthengine.google.com/402a26173dd1e43bc5360c04f49a5e2a), this above map was generated.  
 Using the EVI maximums previously generated, the annual trends of EVI change can be visualized for all of Senegal. Basically, whereever the highest EVI per year has been going down over the past few years, that area will show up as more yellow and orange. If the EVI has been increasing over the past years, that area will look more blue.  
 The max EVIs were recorded as independent variables; and depending on the time that passed, the slope of the linear fit would've been more positive or negative. That slope is an indicator of changing EVI.
+
+---
+
+## How Do I make use out of These?
+### For those new to Google Earth Engine (*GEE*):
+1. Register as a [GEE developer](https://developers.google.com/earth-engine/guides/getstarted) to edit my scripts and make your own!
+2. Familiarize yourself with the syntax and [how the Engine works](https://youtu.be/I-wFYm4Hnhg?t=1492)
+
+### How to Re-Purpose my scipts (this approach works for all of them):
+1. Once in the GEE editor, add a new Geometry layer as either a rectangle or a polygon
+2. That's it! Click run to do some EVI analysis in your region of interest (*ROI*)
+3. In the rightside _**Tasks**_, there will be an option to download the map to your Google Drive. Run that task if you want a .tif file of your ROI
