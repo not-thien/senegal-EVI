@@ -20,7 +20,7 @@ This graph is the EVI over time of a sample point in Senegal's Peanut Basin. The
 This is the first stage of land degradation analysis. Maximum annual EVIs reflect the greenest times of the year: right after the rainy season. 
 
 ## Annual EVI Differences
-![Map of Senegal's seasonal differences in EVI](mapsANDgraphs/seasonalDiffEVI_FINALpng)  
+![Map of Senegal's seasonal differences in EVI](mapsANDgraphs/seasonalDiffEVI_FINAL.png)  
 [**Here's the GEE script for this one**](https://code.earthengine.google.com/f948968ca7d10071904dce5f3ccc5182). Based off of the previous algorithm, this map highlights where the greatest differences in EVI are.  
 In a single given year, big differences in *greenness* of an area in Senegal indicate farmed lands and where seasonality strongly affects plants and soil.  
 
