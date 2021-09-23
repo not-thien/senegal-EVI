@@ -1,5 +1,4 @@
 var L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
-// var ROI = null; // DEFINE THIS PER YOUR USE. SEE SenegalROIs.js for premade ROIs.
 
 // Just some map calibration
 Map.centerObject(geometry);
@@ -46,22 +45,31 @@ var timedEviMaxes = ee.ImageCollection(yearlyMaxes);
 
 // reduce the ImageCollection w/ linear fit w/ time as x-axis and EVI as y-axis
 var linearFit = timedEviMaxes.select(['DATE_PRODUCT_GENERATED', 'evi']).reduce(ee.Reducer.linearFit());
-print('info on the LF: ', linearFit);
+
+var percentiles = linearFit.reduceRegion({
+  reducer: ee.Reducer.percentile([10]),
+  geometry: geometry,
+  scale: 30,
+  maxPixels: 1e9
+});
+
+var bot10 = linearFit.lte(ee.Number(percentiles.get("scale")));
+// print('info on the percentiles: ', percentiles.keys());
 
 // visualize it
-Map.addLayer(linearFit, {min: [0, -15, 0], max: [-0.15, 50, 0.15], bands: ['scale', 'offset', 'scale']}, 'EVI linear fit');
+Map.addLayer(bot10, {min: [0], max: [1], bands: ['scale']}, 'EVI linear fit');
 
 var rgbVis = {
-  min: [0, -15, 0],
-  max: [-0.15, 50, 0.15],
-  bands: ['scale', 'offset', 'scale']
+  min: [0],
+  max: [1],
+  bands: ['scale']
 }
 
-var visualized = linearFit.visualize(rgbVis);
+var visualized = bot10.visualize(rgbVis);
 
 Export.image.toDrive({
   image: visualized,
-  description: 'EVILinearChange',
+  description: 'percentileEVI',
   scale: 1000,
   region: geometry,
   maxPixels: 1e9
