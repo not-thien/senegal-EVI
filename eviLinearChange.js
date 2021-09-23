@@ -1,5 +1,5 @@
 var L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
-
+var ROI = null; // DEFINE THIS PER YOUR USE. SEE SenegalROIs.js for premade ROIs.
 // Just some map calibration
 Map.centerObject(geometry);
 // print(ROI.area(20).divide(1000*1000));
